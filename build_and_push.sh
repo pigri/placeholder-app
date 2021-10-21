@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-APP_PLACEHOLDER_IMAGE_NAME="caprover/caprover-placeholder-app"
+APP_PLACEHOLDER_IMAGE_NAME="pigri/placeholder-app"
 
 echo "Deploying to Docker hub ..."
 

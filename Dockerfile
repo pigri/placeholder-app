@@ -1,6 +1,10 @@
 FROM nginx:alpine
 
-ADD default.conf /etc/nginx/conf.d/default.conf
+ENV PORT=80
+
+ADD default.conf.template /etc/nginx/conf.d/default.conf.template
 ADD index.html /usr/share/nginx/html/index.html
 
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["sh", "-c", "pwd; nginx -g 'daemon off;'"]

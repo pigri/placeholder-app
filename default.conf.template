@@ -1,6 +1,6 @@
 server {
-    listen       80;
-    server_name  localhost;
+    listen       ${PORT};
+    server_name  _;
 
     location / {
         root   /usr/share/nginx/html;
@@ -10,5 +10,13 @@ server {
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   /usr/share/nginx/html;
+    }
+
+    location /health {
+        return 200 OK;
+    }
+
+    location ~ /test {
+        return 200 '{"code":"200", "message": "API Test Successful"}';
     }
 }
