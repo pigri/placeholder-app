@@ -1,12 +1,8 @@
-name: Image build
+name: Weekly image build
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - /**
-      - .github/workflows/build-push.yml
+  schedule:
+    - cron: '0 1 * * *'
 permissions:
   contents: read
   packages: write
