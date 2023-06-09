@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ./**
+      - .github/workflows/build-push.yml
 permissions:
   contents: read
   packages: write
