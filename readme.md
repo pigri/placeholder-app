@@ -1,3 +1,4 @@
+[![Twitter @davpapp](https://img.shields.io/badge/Follow-%40davpapp-blue?logo=twitter)](https://twitter.com/davpapp)
 
 # App Placeholder
 
