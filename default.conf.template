@@ -16,6 +16,10 @@ server {
         return 200 OK;
     }
 
+    location /status/healthz {
+        return 200 OK;
+    }
+
     location ~ /test {
         return 200 '{"code":"200", "message": "API Test Successful"}';
     }
