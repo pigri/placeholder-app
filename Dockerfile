@@ -1,4 +1,4 @@
-FROM openresty/openresty:1.27.1.1-1-alpine
+FROM openresty/openresty:1.27.1.1-1-alpine-apk
 
 ENV PORT=80
 RUN apk --no-cache upgrade && apk --no-cache add wget envsubst
