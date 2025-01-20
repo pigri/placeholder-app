@@ -5,8 +5,8 @@ on:
     branches:
       - master
     paths:
-      - ./**
-      - .github/workflows/build-push.yml
+      - '**'
+      - '.github/workflows/build-push.yml'
 permissions:
   contents: read
   packages: write
