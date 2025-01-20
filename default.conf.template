@@ -3,24 +3,35 @@ server {
     server_name  _;
 
     location / {
+        limit_except GET { deny all; }
         root   /usr/share/nginx/html;
         index  index.html index.htm;
     }
 
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
+        limit_except GET { deny all; }
         root   /usr/share/nginx/html;
     }
 
     location /health {
+        limit_except GET { deny all; }
         return 200 OK;
     }
 
     location /status/healthz {
+        limit_except GET { deny all; }
         return 200 OK;
     }
 
     location ~ /test {
+        limit_except GET { deny all; }
         return 200 '{"code":"200", "message": "API Test Successful"}';
+    }
+
+    location /echo {
+        limit_except POST PUT { deny all; }
+        echo_read_request_body;
+        echo_request_body;
     }
 }
