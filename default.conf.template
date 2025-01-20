@@ -1,6 +1,7 @@
 server {
     listen       ${PORT};
     server_name  _;
+    access_log /dev/stdout;
 
     location / {
         limit_except GET { deny all; }

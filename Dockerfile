@@ -4,6 +4,7 @@ ENV PORT=80
 RUN apk --no-cache upgrade && apk --no-cache add wget envsubst
 
 ADD default.conf.template /etc/nginx/conf.d/default.conf.template
+ADD nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 ADD index.html /usr/share/nginx/html/index.html
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
